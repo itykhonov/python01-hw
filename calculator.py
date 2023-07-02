@@ -7,7 +7,19 @@ def is_integer(input):
         print("Input is not an integer. Try one more time.");
         return is_integer(input);
 
-# check is the value is integer and it is in the valid range or recall the action from user        
+# check is the value is an integer or a float number and recall the action from user if not
+def is_integer_or_float_number(input):
+    inputValue = input();
+    try: 
+        if float(inputValue).is_integer():
+            return int(inputValue);
+        else:
+            return float(inputValue);
+    except ValueError:
+        print("Input is not an integer or a float number. Try one more time.");
+        return is_integer_or_float_number(input);
+
+# check is the value is an integer and it is in the valid range or recall the action from user        
 def is_operation_valid(input):
     val = is_integer(input);
 
@@ -61,15 +73,26 @@ def third_step():
 
     return input("Enter your choice (1-4): ");
 
+# reinit calculator
+def reinit():
+    answer = input("Do you want new calculation? (Y/N): ");
+
+    if answer.lower() == "y":
+        init();
+    
+
 # init calculator
 def init():
     print("Welcome to the Calculator Program!");
 
-    number_1 = is_integer(first_step);
-    number_2 = is_integer(second_step);
+    number_1 = is_integer_or_float_number(first_step);
+    number_2 = is_integer_or_float_number(second_step);
     operation = is_operation_valid(third_step);
+
     result = calc(operation, number_1, number_2);
 
     print(result);
     
+    reinit();
+
 init();
