@@ -1,31 +1,36 @@
-**Task Advanced: Create a Password Generator for Linux Users**
+**Task**: _Password Generator Program_
 
-Your task is to create a password generator program using Python specifically designed for Linux users. The program should generate strong and secure passwords that can be used for user accounts on Linux systems.
+**Objective**:
+Implement a password generator program using basic object-oriented programming principles in Python.
 
-**Requirements:**
+**Instructions**:
 
-_Prompt the user to enter the desired length for the password_.
-_Generate a random password consisting of a combination of uppercase letters, lowercase letters, numbers, and special characters._
-_Ensure that the generated password meets the following criteria:_
-- Contains at least one uppercase letter
-- Contains at least one lowercase letter
-- Contains at least one number
-- Contains at least one special character (e.g., !, @, #, $, %, etc.)
-- Display the generated password to the user.
+1. Create a Python class called `PasswordGenerator` that will generate random passwords based on certain criteria.
 
+2. The PasswordGenerator class should have the following attributes:
 
-Example Output:
+* `length`: an integer representing the length of the password (default: 8)
+* `include_uppercase`: a boolean indicating whether to include uppercase letters in the password (default: True)
+* `include_lowercase`: a boolean indicating whether to include lowercase letters in the password (default: True)
+* `include_digits`: a boolean indicating whether to include digits in the password (default: True)
+* `include_special_chars`: a boolean indicating whether to include special characters in the password (default: True)
 
-```bash
-Welcome to the Linux User Password Generator!
+3. Implement the following_ methods in the PasswordGenerator class:
+  * `__init__`(self): Initializes the attributes of the class.
+  * `generate_password(self`): 
+Generates and returns a random password based on the specified criteria. The password should be a string of characters randomly chosen from the available character sets (uppercase letters, lowercase letters, digits, and special characters).
 
-Please enter the desired password length: 12
+4. Write a separate Python script (outside the class) that utilizes the PasswordGenerator class.
+* Create an instance of the PasswordGenerator class.
+* Prompt the user to input the desired password length and criteria (whether to include uppercase letters, lowercase letters, digits, and special characters).
+* Use the instance of the class to generate a password based on the user's input.
+* Display the generated password to the user.
 
-Generated password: 3@5uJ9#p1L$w
-```
+5. Test your program with different inputs and ensure it generates passwords that satisfy the user's criteria.
 
-Note:
+** Submission Guidelines**:
+* Submit the Python script file containing the implementation of the PasswordGenerator class and the separate script that utilizes the class.
+* Include comments in your code to explain the purpose and functionality of each section.
+* Add any additional features or enhancements to the program if you desire, as long as the basic requirements are met.
 
-_You can utilize the random module in Python to generate random characters and build the password._
-_Consider using the string module in Python to access sets of characters (uppercase, lowercase, numbers, and special characters)._
-_Make sure to include clear instructions and error handling for invalid input._
+** Note **: You may use any built-in Python libraries or functions related to random number generation or string manipulation to complete this assignment.
